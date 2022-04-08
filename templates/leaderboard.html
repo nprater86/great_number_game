@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/style.css') }}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content flex">
+            <h1>Leaderboard</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Guesses</th>
+                </tr>
+                {% for player in session['leaderboard']: %}
+                    <tr>
+                        <td>{{ player['name'] }}</td>
+                        <td>{{ player['attempts'] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <div id="playAgain" class="flex">
+                <form action="/reset"><button id="playAgainBtn">Play Again?</button></form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='../static/js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #2a2a2a;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    text-align: center;
+    margin-top: 75px;
+}
+
+.content {
+    flex-direction: column;
+    gap: 100px;
+}
+
+button{
+    padding: 25px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    position: relative;
+    color: white;
+    font-weight: bolder;
+}
+
+button:active{
+    box-shadow: none;
+    top: 5px;
+    left: 5px;
+}
+
+#inputNum {
+    width: 145px;
+    height: 45px;
+    outline: none;
+    text-align: center;
+    font-size: xx-large;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+#go {
+    background-color: rebeccapurple;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#tooHigh {
+    background-color: orange;
+    padding: 100px;
+    border: 2px solid black;
+}
+
+#tooLow {
+    background-color: orange;
+    padding: 100px;
+    border: 2px solid black;
+}
+
+#youWin {
+    flex-direction: column;
+    gap: 20px;
+    background-color: green;
+    padding: 50px;
+    border: 2px solid black;
+}
+
+#youWin button{
+    background-color: darkgoldenrod;
+}
+
+#leaderBoardForm{
+    display: flex;
+}
+
+#inputName {
+    width: 145px;
+    height: 45px;
+    outline: none;
+    text-align: center;
+    font-size:medium;
+    font-weight: bolder;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 5px 5px black;
+    flex: 4;
+}
+
+#inputNameBtn {
+    flex: 1;
+    padding: 15px;
+}
+
+#youLose {
+    flex-direction: column;
+    gap: 20px;
+    background-color: red;
+    padding: 50px;
+    border: 2px solid black;
+}
+
+#youLose button{
+    background-color:green;
+}
+
+#playAgain{
+    background-color: none;
+}
+
+#playAgainBtn{
+    background-color: darkgoldenrod;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+    margin: 20px auto;
+
+}
+
+th {
+    border: 1px solid white;
+    padding: 10px 20px;
+}
+
+td {
+    border: 1px solid white;
+    padding: 10px 20px;
+}

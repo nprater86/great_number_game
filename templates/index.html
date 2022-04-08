@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='../static/css/style.css') }}">
+    <title>Great Number Game</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content flex">
+            <h1>Guess the Number!</h1>
+            <h2>I'm thinking of a number between 1 and 100...</h2>
+            {% if session['state'] != 'win' %}
+                <form action="/guess" method="post" class="flex" id="numInput">
+                    <input type="number" name="guess" id="inputNum">
+                    <button type="submit" id="go">GUESS</button>
+                </form>
+                <h1>Number of Guesses Remaining: <span>{{ session['num_guesses'] }}</span></h1>
+            {% endif %}
+            {% if session['state'] == 'too_high' %}
+                <h3 id="tooHigh">Too high!</h3>
+            {% elif session['state'] == 'too_low'%}
+                <h3 id="tooLow">Too low!</h3>
+            {% elif session['state'] == 'win'%}
+            <div id="youWin" class="flex">
+                <h3>You win!</h3>
+                <h3>The number was {{ session['number']}}!</h3>
+                <form action="/reset"><button>Play Again?</button></form>
+                <form action="/add_to_leaderboard" id="leaderBoardForm" method='post'>
+                    <input type="text" name="name" id="inputName">
+                    <button type="submit" id="inputNameBtn">Add me to Leaderboard!</button>
+                </form>
+            </div>
+            {% elif session['state'] == 'lose'%}
+            <div id="youLose" class="flex">
+                <h3>You lose!</h3>
+                <h3>The number was {{ session['number']}}!</h3>
+                <form action="/reset"><button>Play Again?</button></form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="{{ url_for('static',filename='../static/js/script.js') }}"></script>
+</body>
+</html>
