@@ -15,7 +15,7 @@
             {% if session['state'] != 'win' %}
                 <form action="/guess" method="post" class="flex" id="numInput">
                     <input type="number" name="guess" id="inputNum">
-                    <button type="submit" id="go">GUESS</button>
+                    <button type="submit" id="go" onclick="preventGuess()">GUESS</button>
                 </form>
                 <h1>Number of Guesses Remaining: <span>{{ session['num_guesses'] }}</span></h1>
             {% endif %}
@@ -30,7 +30,7 @@
                 <form action="/reset"><button>Play Again?</button></form>
                 <form action="/add_to_leaderboard" id="leaderBoardForm" method='post'>
                     <input type="text" name="name" id="inputName">
-                    <button type="submit" id="inputNameBtn">Add me to Leaderboard!</button>
+                    <button type="submit" id="nameBtn" onclick="preventName()">Add me to Leaderboard!</button>
                 </form>
             </div>
             {% elif session['state'] == 'lose'%}
@@ -42,6 +42,6 @@
             {% endif %}
         </div>
     </div>
-    <script src="{{ url_for('static',filename='../static/js/script.js') }}"></script>
+    <script src="{{ url_for('static',filename='../static/js/script.js') }}" defer></script>
 </body>
 </html>

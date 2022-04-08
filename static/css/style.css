@@ -100,7 +100,7 @@ button:active{
     flex: 4;
 }
 
-#inputNameBtn {
+#nameBtn {
     flex: 1;
     padding: 15px;
 }
